@@ -1,5 +1,5 @@
 import uvicorn
-from app import app
+from app.app import app
 
 def main():
     uvicorn.run(app, host="127.0.0.1", port=8000)
