@@ -1,17 +1,17 @@
 from fastapi import Request, FastAPI, Depends, Form, status
-from database import SessionLocal, engine
 from sqlalchemy.orm import Session
 from starlette.responses import RedirectResponse
 from starlette.templating import Jinja2Templates
 import models
+import database
 
-models.Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 def get_db():
-    db = SessionLocal()
+    db = database.SessionLocal()
     try:
         yield db
     finally:

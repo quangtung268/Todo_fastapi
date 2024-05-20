@@ -10,10 +10,10 @@ services:
     container_name: todo_mysql_1
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Tung123
+      MYSQL_ROOT_PASSWORD: admin1
       MYSQL_USER: admin
-      MYSQL_PASSWORD: Tung123
-      MYSQL_DATABASE: todo_db
+      MYSQL_PASSWORD: admin1
+      MYSQL_DATABASE: todo
     ports:
       - "3306:3306"
     volumes:
