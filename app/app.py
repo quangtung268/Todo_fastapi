@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from starlette.responses import RedirectResponse
 from starlette.templating import Jinja2Templates
 import app.models as models
-import database
+import database.database as database
 
 models.Base.metadata.create_all(bind=database.engine)
 
